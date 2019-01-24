@@ -1,0 +1,9 @@
+<% @all_users.each do |user| %>
+
+<p><strong>Name :</strong>  <%=user.firstname %>  <%=user.lastname %></p>
+<p><strong>Username: </strong><%= user.username %> </p>
+<p><strong>Email:</strong> <%= user.email %></p>
+<form action="/personalposts" method="post">
+<input type="submit" name="<%=user.id%>"value="Posts"></form>
+
+<%end%>

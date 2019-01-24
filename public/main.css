@@ -1,0 +1,46 @@
+body {
+    background-image:  url("img2.jpg");
+   background-size: cover;
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+header {
+    text-align: center;
+}
+.container {
+    height: 800px; background-color: lightskyblue;
+}
+.homediv {
+     padding: 20px; margin: 20px;
+}
+.homepage a {
+    padding: 10px; margin: 5px; text-decoration: none; font-size: 20px;
+
+}
+.login{
+    float: right;
+}
+input {
+    padding: 5px;
+}
+div {
+    margin-top: 40px; margin-right: 20px;
+}
+.search {
+    float: right ;
+}
+.myinput {
+    margin-bottom: 50px;
+}
+.nav{
+    margin: 20px; padding: 20px; border: 1px solid;
+    background-color: orange;
+}
+a{
+    margin: 70px;
+    text-decoration: none; color: #000;
+}
+#delete {
+    background-color: red; height: 30px;width: 100px; font-size: 20px;
+}

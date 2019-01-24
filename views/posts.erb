@@ -1,0 +1,34 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5><%= @showuser%></h5>
+<form action="/posts" method="post">
+    <textarea name="textarea" placeholder="say something funny"id="" cols="30" rows="3"></textarea>
+    <input type="submit" value="post">
+</form>
+<p><%= @profile %></p> <br>
+<p><%= @mypost %></p>
+    <% i = 0 %>
+<% while i < @last_posts.length %>
+<p><%= @last_posts[i].content %></p>
+<% i = i + 1 %>
+<% end %>
+
+
+
+
+
+
+
+
+
