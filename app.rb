@@ -9,7 +9,9 @@ get "/" do
     erb :home
 end
 
-
+get '/login' do
+    erb :login
+  end
   
   post '/signup' do
     user = User.create(
@@ -34,7 +36,7 @@ end
         
         redirect '/posts'
     else
-        redirect '/login'
+        redirect '/'
     end
   end
   get "/posts" do
@@ -108,7 +110,7 @@ get '/profile' do
    
   end
   post '/personalposts' do
-    post = User.find(params[:user.id])
+    post = User.find(1)
     @user_posts = post.posts.all
     
     erb :personalposts
