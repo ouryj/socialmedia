@@ -24,17 +24,20 @@ get '/login' do
     )
     session[:user_id] = user.id
     
-
-    redirect 'login'
+    session[:user_id] = nil 
+    redirect '/'
   end
 
   post '/login' do
+    if params[:username] && params[:password].empty?
+        redirect '/logout'
+    end 
     user = User.find_by(username: params[:username])
+  
     if user && user.password == params[:password]
         session[:user_id] = user.id
         
-        
-        redirect '/posts'
+        redirect'/posts'
     else
         redirect '/'
     end
@@ -46,7 +49,7 @@ get '/login' do
   end
   get "/logout" do
     session[:user_id] = nil 
-    erb :home
+    redirect '/'
   end
   post '/posts' do
     last_post = Post.all
@@ -65,7 +68,7 @@ get '/login' do
 
 get "/usersposts" do
     @current_user = User.find(session[:user_id])
-    @posts = Post.find(session[:user_id]).content
+    # @posts = Post.find(session[:user_id]).content
     @all_post = Post.all
     erb :usersposts
 

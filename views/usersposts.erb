@@ -1,13 +1,12 @@
 
 
 
-<% @posts%>
 
 
-<ul>
-<%@all_post.each do |post|%>
-<li> <%= post.content %></li>
-<%end%>
-</ul>
+    <% i = 0 %>
+<% while i < @all_post.length %>
+<p><%= @all_post[i].content %></p>
+<% i = i + 1 %>
+<% end %>
 
 
